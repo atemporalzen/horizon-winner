@@ -7,7 +7,7 @@
     "test": "node --test tests/engine.test.mjs",
     "test:browser": "playwright test",
     "test:browser:chrome": "playwright test --project=chrome",
-    "check:js": "node --check web/engine.js && node --check web/runner.js && node --check web/controller.js && node scripts/build-standalone.mjs --check"
+    "check:js": "node --check html/payload.js && node --check html/payloads/aws-metadata-exfil.js && node --check html/payloads/hook-and-control.js && node --check html/payloads/read-response.js && node --check web/engine.js && node --check web/runner.js && node --check web/controller.js && node scripts/build-standalone.mjs --check"
   },
   "devDependencies": {"@playwright/test": "1.63.0"}
 }

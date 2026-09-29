@@ -1,5 +1,15 @@
 # Verification record
 
+## Horizon-compatible workflow correction
+
+The default workflow now uses `html/amaze.html` plus the `singularity-server` launcher, not the original controller. All operator attack settings, including the collector, are in `amaze.html`. The launcher compiles the pinned vendored source on first run with Go 1.27.1; no separate build command is required.
+
+Local checks of this correction: 21 Chrome browser tests passed, including six new Horizon-layout cases (navigation/AWS config, legacy fetch, selected Hook loading, entry-error rejection, popup blocking and cancellation). The tests use the actual local Singularity HTTP template/assets with simulated rebinding transport. The vendored server passed its Go race tests, vet and govulncheck; macOS arm64 and Linux amd64 builds succeeded. Hosted CI for this correction must be checked separately; earlier CI results below apply to the earlier source snapshot.
+
+Real public-to-local DNS/LNA validation remains pending operator infrastructure. AWS collector transmission and the full live WebSocket command channel were not exercised against an external target in these tests.
+
+## Earlier controller/standalone verification snapshot
+
 Local verification date: 2026-09-29. Host: macOS arm64, Go 1.27.1, Node 20.19.1, Google Chrome 154.0.8037.58, Playwright 1.63.0.
 
 | Check | Result |

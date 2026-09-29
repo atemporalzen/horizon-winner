@@ -19,6 +19,7 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: make test check
+      - run: cd server && go test -race ./... && go vet ./... && go run golang.org/x/vuln/cmd/govulncheck@v1.8.0 ./...
       - run: go run golang.org/x/vuln/cmd/govulncheck@v1.8.0 ./...
   browser:
     runs-on: ubuntu-latest

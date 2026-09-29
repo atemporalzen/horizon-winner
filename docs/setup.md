@@ -1,5 +1,7 @@
 # Your dynamic-domain hosting workflow
 
+Current quick start: clone `horizon-winner`, edit `html/amaze.html`, and run `./singularity-server -IPAddress YOUR_DROPLET_IP -HTTPServerPort 80 -HTTPServerPort 8080`. The launcher builds the vendored source automatically using your installed Go toolchain. The controller options below are historical alternatives, not prerequisites.
+
 The public examples retain your `dynamic.xxx.com` convention. Set the full domain you control, not the literal example. No Namecheap, DigitalOcean, resolver or system-service settings are changed by this repository.
 
 ## Option A: existing Singularity infrastructure

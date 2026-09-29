@@ -1,0 +1,10 @@
+#!/bin/sh
+# Same launch command as Horizon. Build the pinned server source when needed.
+set -eu
+repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+mkdir -p "$repo_dir/.cache"
+# Go's build cache avoids recompiling unchanged packages and tracks every source
+# and dependency change, not just a hand-picked timestamp list.
+(cd "$repo_dir/server" && CGO_ENABLED=0 go build -trimpath -o "$repo_dir/.cache/singularity-server" ./cmd/singularity-server)
+cd "$repo_dir"
+exec "$repo_dir/.cache/singularity-server" "$@"

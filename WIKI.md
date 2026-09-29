@@ -1,5 +1,7 @@
 # Operating guide
 
+For the current Horizon-compatible edit-one-file workflow, follow README.md. The sections below document the earlier optional controller/standalone harness and are not required to launch `singularity-server` with `html/amaze.html`.
+
 ## Existing Horizon-style hosting
 
 Host `html/amaze.html` as `/amaze.html` after editing its `CONFIG`. It contains the state machine, styles and browser adapter; no `payload.js` request is required. Use the exact preallocated rebinding hostname or let it construct the upstream hexadecimal IPv4 session hostname. The generated link keeps the current page path, so the same file must be available at that path on the entry server for every session hostname.

@@ -15,6 +15,7 @@ jobs:
         with:
           go-version-file: go.mod
       - run: go test -race ./... && go vet ./...
+      - run: cd server && go test -race ./... && go vet ./...
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '22'
@@ -24,6 +25,7 @@ jobs:
         env:
           RELEASE_VERSION: ${{ github.ref_name }}
       - run: go run github.com/CycloneDX/cyclonedx-gomod/cmd/cyclonedx-gomod@v1.12.0 mod -json -output dist/sbom.cdx.json
+      - run: cd server && go run github.com/CycloneDX/cyclonedx-gomod/cmd/cyclonedx-gomod@v1.12.0 mod -json -output ../dist/singularity-sbom.cdx.json
       - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3
         with:
           subject-path: dist/*

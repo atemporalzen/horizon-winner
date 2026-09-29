@@ -1,6 +1,6 @@
 import {test,expect} from "@playwright/test";
 import {readFileSync} from "node:fs";
-const source=readFileSync(new URL("../../html/amaze.html",import.meta.url),"utf8");
+const source=readFileSync(new URL("../../amaze.html",import.meta.url),"utf8");
 const origin="http://session.rebind.test:8080";
 async function setup(page,{behavior="navigation",configured=true,path="/proof",host="session.rebind.test"}={}){
   const html=source.replace("configured: false",`configured: ${configured}`).replace('rebindingHost: ""',`rebindingHost: ${JSON.stringify(host)}`).replace('targetPath: "/proof"',`targetPath: ${JSON.stringify(path)}`).replace("waitBeforeNavigationSeconds: 60","waitBeforeNavigationSeconds: 1").replace("timeoutSeconds: 180","timeoutSeconds: 6");

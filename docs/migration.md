@@ -1,5 +1,7 @@
 # Migration from Horizon / Horizon-lna
 
+Historical record of the first controller-based implementation. The default workflow was subsequently corrected: `html/amaze.html`, original-style launch flags, `fs`/legacy methods and AWS/Hook payload selection are now restored. See the current README and NOTICE; the omissions listed below describe the earlier controller, not the default Singularity-backed workflow.
+
 | Earlier behavior or shortcoming | Horizon Winner treatment |
 | --- | --- |
 | `html/amaze.html` entry point | Retained as a self-contained generated artifact; root convenience copy also supplied |
