@@ -1,0 +1,24 @@
+{
+  "domain": "dynamic.example.com",
+  "entry_ip": "203.0.113.10",
+  "http_listen": "0.0.0.0:8080",
+  "admin_listen": "127.0.0.1:9090",
+  "dns_listen": "0.0.0.0:53",
+  "dns_nameserver": "ns.dynamic.example.com",
+  "dns_contact": "hostmaster.dynamic.example.com",
+  "rebind_after_seconds": 10,
+  "session_ttl_seconds": 600,
+  "max_sessions": 100,
+  "poll_interval_ms": 2000,
+  "request_timeout_ms": 4000,
+  "run_timeout_seconds": 180,
+  "max_response_bytes": 65536,
+  "targets": [{
+    "id": "lab",
+    "label": "My synthetic loopback fixture",
+    "ip": "127.0.0.1",
+    "port": 8080,
+    "path": "/proof",
+    "proof_marker": "horizon-lab-proof-v1"
+  }]
+}

@@ -1,0 +1,12 @@
+{
+  "domain": "rebind.test",
+  "entry_ip": "127.0.0.1",
+  "http_listen": "127.0.0.1:18080",
+  "admin_listen": "127.0.0.1:19090",
+  "dns_listen": "127.0.0.1:15353",
+  "rebind_after_seconds": 1,
+  "run_timeout_seconds": 8,
+  "poll_interval_ms": 1000,
+  "request_timeout_ms": 1000,
+  "targets": [{"id":"lab","label":"Browser fixture","ip":"127.0.0.2","port":18080,"path":"/proof","proof_marker":"horizon-lab-proof-v1"}]
+}

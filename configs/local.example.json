@@ -1,0 +1,24 @@
+{
+  "domain": "rebind.test",
+  "entry_ip": "127.0.0.1",
+  "http_listen": "127.0.0.1:8080",
+  "admin_listen": "127.0.0.1:9090",
+  "dns_listen": "127.0.0.1:5353",
+  "dns_nameserver": "ns.rebind.test",
+  "dns_contact": "hostmaster.rebind.test",
+  "rebind_after_seconds": 10,
+  "session_ttl_seconds": 600,
+  "max_sessions": 100,
+  "poll_interval_ms": 2000,
+  "request_timeout_ms": 4000,
+  "run_timeout_seconds": 180,
+  "max_response_bytes": 65536,
+  "targets": [{
+    "id": "lab",
+    "label": "Mock loopback service",
+    "ip": "127.0.0.2",
+    "port": 8080,
+    "path": "/proof",
+    "proof_marker": "horizon-lab-proof-v1"
+  }]
+}

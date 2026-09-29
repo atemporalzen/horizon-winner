@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Horizon Winner</title><link rel="stylesheet" href="/style.css"><script type="module" src="/controller.js"></script></head>
+<body><main>
+<p class="eyebrow">HORIZON / BROWSER RESEARCH</p><h1>Navigation, observed.</h1>
+<p class="lede">Create a bounded experiment against a configured service. A visible popup tests whether a top-level navigation can reach the service when a fetch cannot.</p>
+<section><h2>Connect to the controller</h2><form id="connect"><label for="token">Admin token from server startup</label><input id="token" type="password" autocomplete="off" minlength="24" required><button>Connect</button></form><p id="connect-status" role="status"></p></section>
+<section id="experiment" hidden><h2>New experiment</h2><form id="create"><label for="target">Configured target</label><select id="target"></select><p id="target-detail" class="muted"></p><button>Create session</button></form><p id="create-status" role="status"></p><div id="session" hidden><a id="run-link" class="button" target="_blank" rel="noopener">Open experiment page</a><p class="muted">On that page, click Start to open the test popup. Each session has its own hostname and timeout.</p></div></section>
+<footer>Responses stay in the experiment page. Download a JSON report there to preserve the observations.</footer>
+</main></body></html>
