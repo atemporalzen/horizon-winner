@@ -17,6 +17,7 @@ Local verification date: 2026-09-29. Host: macOS arm64, Go 1.27.1, Node 20.19.1,
 | CycloneDX Go-module SBOM | Generated locally with cyclonedx-gomod v1.12.0; main-module version warning before Git initialization |
 | Firefox browser suite on this macOS host | Not executed successfully: bundled Firefox 155.0 exited during launch with “Could not find profile folder”; rerun with an operational Firefox test runtime |
 | Real public-entry → loopback/private DNS/LNA boundary | **Not tested**; requires operator infrastructure and target |
-| Hosted GitHub Actions/release provenance | Workflow supplied; status must be checked on GitHub, not inferred from local tests |
+| Hosted GitHub Actions | [CI run 36589374220](https://github.com/atemporalzen/horizon-winner/actions/runs/36589374220) passed both jobs for source commit `6a5431a81feb63c582eaaf7114951d299ec7a5fc`: Go/race/vet/config/generated-artifact checks, dependency vulnerability check, and Chrome/Firefox browser suites on Linux |
+| Hosted release provenance | Release workflow supplied; no release tag or hosted release has been published |
 
-The Chrome tests deliberately abort comparison fetches and fulfill synthetic target navigations. They prove UI/evidence behavior, not that Chrome itself rejected a real fetch for LNA. Firefox is configured in CI but compatibility is unverified until those runs complete. Do not describe a timed-out run as a confirmed defense or a fetch exception as a confirmed LNA event.
+The browser tests deliberately abort comparison fetches and fulfill synthetic target navigations. They prove UI/evidence behavior, not that the browser itself rejected a real fetch for LNA. Both Chrome and Firefox suites passed in Linux CI; the local macOS Firefox runtime launch failure above is a separate environment limitation. Real DNS/LNA compatibility remains unverified in either browser. Do not describe a timed-out run as a confirmed defense or a fetch exception as a confirmed LNA event.
